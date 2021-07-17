@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Money_management">
+        <activity android:name=".add_edit_transactions"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
