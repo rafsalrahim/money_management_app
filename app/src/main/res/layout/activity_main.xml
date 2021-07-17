@@ -6,28 +6,195 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Money_management.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Money_management.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginLeft="@dimen/fab_margin_left"
+        android:layout_marginBottom="@dimen/fab_mar_bott"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lid_top"
+            android:layout_width="409dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:background="@color/red_topbar"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <ImageButton
+                android:id="@+id/calender_topbar"
+                android:layout_width="64dp"
+                android:layout_height="54dp"
+                android:visibility="visible"
+                android:background="@color/red_topbar"
+                app:srcCompat="@android:drawable/ic_menu_my_calendar"
+                tools:visibility="visible" />
+
+            <SearchView
+                android:id="@+id/search_top"
+                android:layout_width="158dp"
+                android:layout_marginLeft="60dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="7dp"
+                app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linlay2_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="51dp"
+            android:visibility="visible"
+            android:background="@color/red_topbar">
+
+            <Button
+                android:id="@+id/daily"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daily"
+                android:background="@color/red_topbar"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/weekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Weekly"
+                android:background="@color/red_topbar"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/monthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Monthly"
+                android:background="@color/red_topbar"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/calender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Calender"
+                android:background="@color/red_topbar"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total"
+                android:background="@color/red_topbar"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linlay3_display_acc_details"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="101dp">
+
+            <TextView
+                android:id="@+id/income"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:autoText="false"
+
+                android:text="Income"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/expense"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Expense"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="total"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/transaction_list"
+            android:layout_width="409dp"
+            android:layout_height="548dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="132dp" />
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="51dp"
+            android:background="@color/yello_bottom"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="680dp">
+
+            <Button
+                android:id="@+id/trans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/yello_bottom"
+                android:textColor="@color/white"
+                android:text="Trans" />
+
+            <Button
+                android:id="@+id/stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/yello_bottom"
+                android:textColor="@color/white"
+                android:text="Stat" />
+
+            <Button
+                android:id="@+id/acc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/yello_bottom"
+                android:textColor="@color/white"
+                android:text="Acc" />
+
+            <Button
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:drawableLeft=""
+                android:background="@color/yello_bottom"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>
